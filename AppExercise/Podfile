@@ -1,0 +1,84 @@
+platform :ios, '14.0'
+use_frameworks!
+
+inhibit_all_warnings!
+
+# Add Application pods here
+def app_pods
+  
+  pod 'Alamofire', '4.8.2'
+  pod 'AlamofireImage', '~> 3.5.2'
+  pod 'AlamofireNetworkActivityLogger', '~> 2.4.0'
+  pod 'AlamofireNetworkActivityIndicator', '~> 2.4.0'
+  pod 'ChameleonFramework', '~> 2.1.0'
+  pod 'IQKeyboardManagerSwift', '~> 6.5.6'
+  pod 'Material', '~> 3.1.6'
+  pod 'PureLayout', '~> 3.1.8'
+  pod 'R.swift', '~> 5.4.0'
+  pod 'SVProgressHUD', '~> 2.2.5'
+  pod 'SwiftLint', '~> 0.34.0'
+  pod 'Pageboy', '~> 3.6.2'
+  pod 'SkeletonView', '~> 1.8.7'
+  pod 'ImageViewer.swift', '~> 3.0'
+  pod 'Hero', '~> 1.6.1'
+  pod 'ImageSlideshow', '~> 1.9.2'
+
+  # ReactiveX
+  pod 'RxSwift', '5.1.0'
+  pod 'RxSwiftExt', '5.1.0'
+  pod 'NSObject+Rx', '5.1.0'
+
+  # Material Design Components
+  pod 'MaterialComponents/Buttons', '~> 104.0.1'
+  pod 'MaterialComponents/Buttons+Theming', '~> 104.0.1'
+  pod 'MaterialComponents/TextFields', '~> 104.0.1'
+  pod 'MaterialComponents/TextFields+Theming', '~> 104.0.1'
+  pod 'MaterialComponents/Snackbar', '~> 104.0.1'
+  
+end
+
+def testing_pods
+  pod 'Quick', '~> 4.0.0'
+  pod 'Nimble', '~> 9.2.0'
+
+end
+
+target 'AppExercise' do
+  app_pods
+  
+  target 'Tests' do
+    inherit! :search_paths
+    testing_pods
+  end
+  
+  target 'UITests' do
+    inherit! :search_paths
+    testing_pods
+  end
+end
+
+post_install do |installer|
+  
+  puts "Removing static analyzer support for all targets."
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+        config.build_settings['OTHER_CFLAGS'] = "$(inherited) -Qunused-arguments -Xanalyzer -analyzer-disable-all-checks"
+        config.build_settings['GCC_WARN_INHIBIT_ALL_WARNINGS'] = "YES"
+
+        # This will solve issue if using M1
+        config.build_settings["EXCLUDED_ARCHS[sdk=iphonesimulator*]"] = "arm64"
+    end
+  end
+
+  
+#  puts "  Using Swift 5.0 for targets:"
+#  installer.pods_project.targets.each do |target|
+#    if ['NameOfPodHere'].include? target.name
+#      puts "   - #{target.name}"
+#      target.build_configurations.each do |config|
+#        config.build_settings['SWIFT_VERSION'] = '5.0'
+#      end
+#    end
+#  end
+
+end

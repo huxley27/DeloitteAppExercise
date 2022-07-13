@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZYk-N8-CdX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home Controller-->
+        <scene sceneID="Ydw-XX-I5K">
+            <objects>
+                <viewController storyboardIdentifier="HomeController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5hi-2W-uC6" customClass="HomeController" customModule="AppExercise" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="l7G-wc-8cX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lhm-Vj-d70" customClass="APLabelLargeTitle" customModule="AppExercise" customModuleProvider="target">
+                                <rect key="frame" x="16" y="104" width="45.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1aw-bq-l2e" customClass="APLabelBody" customModule="AppExercise" customModuleProvider="target">
+                                <rect key="frame" x="184" y="440" width="46" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Rmj-9j-8nx"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="1aw-bq-l2e" firstAttribute="centerY" secondItem="Rmj-9j-8nx" secondAttribute="centerY" id="gCl-bm-p6p"/>
+                            <constraint firstItem="lhm-Vj-d70" firstAttribute="top" secondItem="Rmj-9j-8nx" secondAttribute="top" constant="16" id="gIy-Po-NV8"/>
+                            <constraint firstItem="lhm-Vj-d70" firstAttribute="leading" secondItem="Rmj-9j-8nx" secondAttribute="leading" constant="16" id="gja-or-z99"/>
+                            <constraint firstItem="1aw-bq-l2e" firstAttribute="centerX" secondItem="Rmj-9j-8nx" secondAttribute="centerX" id="wpV-OD-leW"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="mom-wE-sSR"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EDi-ey-zgy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="779.71014492753625" y="-50.223214285714285"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Ryv-Vk-eLU">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZYk-N8-CdX" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="Feed" selectedImage="FeedOn" id="3MH-uX-GV6"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="AI2-0d-RiK">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="5hi-2W-uC6" kind="relationship" relationship="rootViewController" id="pjf-yT-nGs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0iP-ya-ukk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-130.43478260869566" y="-50.223214285714285"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="1aw-bq-l2e">
+            <size key="intrinsicContentSize" width="45.5" height="20.5"/>
+        </designable>
+        <designable name="lhm-Vj-d70">
+            <size key="intrinsicContentSize" width="45.5" height="20.5"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="Feed" width="24" height="24"/>
+        <image name="FeedOn" width="24" height="24"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

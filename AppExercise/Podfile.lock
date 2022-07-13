@@ -1,0 +1,256 @@
+PODS:
+  - Alamofire (4.8.2)
+  - AlamofireImage (3.5.2):
+    - Alamofire (~> 4.8)
+  - AlamofireNetworkActivityIndicator (2.4.0):
+    - Alamofire (~> 4.8)
+  - AlamofireNetworkActivityLogger (2.4.0):
+    - Alamofire (~> 4.8)
+  - ChameleonFramework (2.1.0):
+    - ChameleonFramework/Default (= 2.1.0)
+  - ChameleonFramework/Default (2.1.0)
+  - Hero (1.6.1)
+  - ImageSlideshow (1.9.2):
+    - ImageSlideshow/Core (= 1.9.2)
+  - ImageSlideshow/Core (1.9.2)
+  - ImageViewer.swift (3.3.3)
+  - IQKeyboardManagerSwift (6.5.6)
+  - Material (3.1.8):
+    - Material/Core (= 3.1.8)
+  - Material/Core (3.1.8):
+    - Motion (~> 3.1.1)
+  - MaterialComponents/AnimationTiming (104.0.1)
+  - MaterialComponents/Availability (104.0.1)
+  - MaterialComponents/Buttons (104.0.1):
+    - MaterialComponents/Elevation
+    - MaterialComponents/Ink
+    - MaterialComponents/private/Math
+    - MaterialComponents/Ripple
+    - MaterialComponents/ShadowElevations
+    - MaterialComponents/ShadowLayer
+    - MaterialComponents/Shapes
+    - MaterialComponents/Typography
+    - MDFInternationalization
+    - MDFTextAccessibility
+  - "MaterialComponents/Buttons+ColorThemer (104.0.1)":
+    - MaterialComponents/Buttons
+    - MaterialComponents/schemes/Color
+  - "MaterialComponents/Buttons+ShapeThemer (104.0.1)":
+    - MaterialComponents/Buttons
+    - MaterialComponents/schemes/Shape
+  - "MaterialComponents/Buttons+Theming (104.0.1)":
+    - MaterialComponents/Buttons
+    - "MaterialComponents/Buttons+ColorThemer"
+    - "MaterialComponents/Buttons+ShapeThemer"
+    - "MaterialComponents/Buttons+TypographyThemer"
+    - MaterialComponents/schemes/Container
+    - MaterialComponents/ShadowElevations
+  - "MaterialComponents/Buttons+TypographyThemer (104.0.1)":
+    - MaterialComponents/Buttons
+    - MaterialComponents/schemes/Typography
+  - MaterialComponents/Elevation (104.0.1):
+    - MaterialComponents/Availability
+    - MaterialComponents/private/Color
+    - MaterialComponents/private/Math
+  - MaterialComponents/Ink (104.0.1):
+    - MaterialComponents/private/Color
+    - MaterialComponents/private/Math
+  - MaterialComponents/OverlayWindow (104.0.1):
+    - MaterialComponents/private/Application
+  - MaterialComponents/Palettes (104.0.1)
+  - MaterialComponents/private/Application (104.0.1)
+  - MaterialComponents/private/Color (104.0.1)
+  - MaterialComponents/private/KeyboardWatcher (104.0.1):
+    - MaterialComponents/private/Application
+  - MaterialComponents/private/Math (104.0.1)
+  - MaterialComponents/private/Overlay (104.0.1)
+  - MaterialComponents/Ripple (104.0.1):
+    - MaterialComponents/AnimationTiming
+    - MaterialComponents/private/Color
+    - MaterialComponents/private/Math
+  - MaterialComponents/schemes/Color (104.0.1):
+    - MaterialComponents/private/Color
+  - MaterialComponents/schemes/Container (104.0.1):
+    - MaterialComponents/schemes/Color
+    - MaterialComponents/schemes/Shape
+    - MaterialComponents/schemes/Typography
+  - MaterialComponents/schemes/Shape (104.0.1):
+    - MaterialComponents/ShapeLibrary
+    - MaterialComponents/Shapes
+  - MaterialComponents/schemes/Typography (104.0.1):
+    - "MaterialComponents/schemes/Typography+BasicFontScheme"
+    - "MaterialComponents/schemes/Typography+Scheming"
+    - MaterialComponents/Typography
+  - "MaterialComponents/schemes/Typography+BasicFontScheme (104.0.1)"
+  - "MaterialComponents/schemes/Typography+Scheming (104.0.1)"
+  - MaterialComponents/ShadowElevations (104.0.1)
+  - MaterialComponents/ShadowLayer (104.0.1):
+    - MaterialComponents/ShadowElevations
+  - MaterialComponents/ShapeLibrary (104.0.1):
+    - MaterialComponents/private/Math
+    - MaterialComponents/Shapes
+  - MaterialComponents/Shapes (104.0.1):
+    - MaterialComponents/private/Color
+    - MaterialComponents/private/Math
+    - MaterialComponents/ShadowLayer
+  - MaterialComponents/Snackbar (104.0.1):
+    - MaterialComponents/AnimationTiming
+    - MaterialComponents/Buttons
+    - MaterialComponents/Elevation
+    - MaterialComponents/OverlayWindow
+    - MaterialComponents/private/Application
+    - MaterialComponents/private/KeyboardWatcher
+    - MaterialComponents/private/Math
+    - MaterialComponents/private/Overlay
+    - MaterialComponents/ShadowElevations
+    - MaterialComponents/ShadowLayer
+    - MaterialComponents/Typography
+  - MaterialComponents/TextFields (104.0.1):
+    - MaterialComponents/AnimationTiming
+    - MaterialComponents/Buttons
+    - MaterialComponents/Elevation
+    - MaterialComponents/Palettes
+    - MaterialComponents/private/Math
+    - MaterialComponents/Typography
+    - MDFInternationalization
+  - "MaterialComponents/TextFields+ColorThemer (104.0.1)":
+    - MaterialComponents/TextFields
+    - MaterialComponents/Themes
+  - "MaterialComponents/TextFields+Theming (104.0.1)":
+    - MaterialComponents/schemes/Container
+    - MaterialComponents/TextFields
+    - "MaterialComponents/TextFields+ColorThemer"
+    - "MaterialComponents/TextFields+TypographyThemer"
+  - "MaterialComponents/TextFields+TypographyThemer (104.0.1)":
+    - MaterialComponents/schemes/Typography
+    - MaterialComponents/TextFields
+  - MaterialComponents/Themes (104.0.1):
+    - MaterialComponents/schemes/Color
+    - MaterialComponents/schemes/Typography
+  - MaterialComponents/Typography (104.0.1):
+    - MaterialComponents/private/Application
+    - MaterialComponents/private/Math
+  - MDFInternationalization (3.0.0)
+  - MDFTextAccessibility (2.0.1)
+  - Motion (3.1.3):
+    - Motion/Core (= 3.1.3)
+  - Motion/Core (3.1.3)
+  - Nimble (9.2.0)
+  - "NSObject+Rx (5.1.0)":
+    - RxSwift (~> 5.1)
+  - Pageboy (3.6.2)
+  - PureLayout (3.1.8)
+  - Quick (4.0.0)
+  - R.swift (5.4.0):
+    - R.swift.Library (~> 5.3.0)
+  - R.swift.Library (5.3.0)
+  - RxCocoa (5.1.1):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxRelay (5.1.1):
+    - RxSwift (~> 5)
+  - RxSwift (5.1.0)
+  - RxSwiftExt (5.1.0):
+    - RxSwiftExt/Core (= 5.1.0)
+    - RxSwiftExt/RxCocoa (= 5.1.0)
+  - RxSwiftExt/Core (5.1.0):
+    - RxSwift (~> 5.0)
+  - RxSwiftExt/RxCocoa (5.1.0):
+    - RxCocoa (~> 5.0)
+    - RxSwiftExt/Core
+  - SkeletonView (1.8.8)
+  - SVProgressHUD (2.2.5)
+  - SwiftLint (0.34.0)
+
+DEPENDENCIES:
+  - Alamofire (= 4.8.2)
+  - AlamofireImage (~> 3.5.2)
+  - AlamofireNetworkActivityIndicator (~> 2.4.0)
+  - AlamofireNetworkActivityLogger (~> 2.4.0)
+  - ChameleonFramework (~> 2.1.0)
+  - Hero (~> 1.6.1)
+  - ImageSlideshow (~> 1.9.2)
+  - ImageViewer.swift (~> 3.0)
+  - IQKeyboardManagerSwift (~> 6.5.6)
+  - Material (~> 3.1.6)
+  - MaterialComponents/Buttons (~> 104.0.1)
+  - "MaterialComponents/Buttons+Theming (~> 104.0.1)"
+  - MaterialComponents/Snackbar (~> 104.0.1)
+  - MaterialComponents/TextFields (~> 104.0.1)
+  - "MaterialComponents/TextFields+Theming (~> 104.0.1)"
+  - Nimble (~> 9.2.0)
+  - "NSObject+Rx (= 5.1.0)"
+  - Pageboy (~> 3.6.2)
+  - PureLayout (~> 3.1.8)
+  - Quick (~> 4.0.0)
+  - R.swift (~> 5.4.0)
+  - RxSwift (= 5.1.0)
+  - RxSwiftExt (= 5.1.0)
+  - SkeletonView (~> 1.8.7)
+  - SVProgressHUD (~> 2.2.5)
+  - SwiftLint (~> 0.34.0)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - AlamofireImage
+    - AlamofireNetworkActivityIndicator
+    - AlamofireNetworkActivityLogger
+    - ChameleonFramework
+    - Hero
+    - ImageSlideshow
+    - ImageViewer.swift
+    - IQKeyboardManagerSwift
+    - Material
+    - MaterialComponents
+    - MDFInternationalization
+    - MDFTextAccessibility
+    - Motion
+    - Nimble
+    - "NSObject+Rx"
+    - Pageboy
+    - PureLayout
+    - Quick
+    - R.swift
+    - R.swift.Library
+    - RxCocoa
+    - RxRelay
+    - RxSwift
+    - RxSwiftExt
+    - SkeletonView
+    - SVProgressHUD
+    - SwiftLint
+
+SPEC CHECKSUMS:
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  AlamofireImage: 63cfe3baf1370be6c498149687cf6db3e3b00999
+  AlamofireNetworkActivityIndicator: 9acc3de3ca6645bf0efed462396b0df13dd3e7b8
+  AlamofireNetworkActivityLogger: 6d3398c692d2c5d83b0c58793537860aca1e383d
+  ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
+  Hero: 215865ba3ae41dd9bb08cd6c60a645529c6fc94b
+  ImageSlideshow: be305b54eaf2b2cfc7a7141c7c734605d44dc07d
+  ImageViewer.swift: 3dbb74a68ac4bdd6cdd585b3128dae17ccd733e5
+  IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
+  Material: a2a3f400a3b549d53ef89e56c58c4535b29db387
+  MaterialComponents: 5f68750c41b8c191c605a9296586717b2f92da93
+  MDFInternationalization: d697c55307816222a55685c4ccb1044ffb030c12
+  MDFTextAccessibility: f4bb4cc2194286651b59a215fdeaa0e05dc90ba5
+  Motion: cf1e060e489f6661126374d5c60dbd2ed991605c
+  Nimble: 4f4a345c80b503b3ea13606a4f98405974ee4d0b
+  "NSObject+Rx": fa6bbcc1ab1faa06b01466bc09b1e0692bbc5946
+  Pageboy: cf121b9dd48c63f3f281b2a9ec93d02e0f23879b
+  PureLayout: a4afb3d79dd958564ce33d22c89f407280d8e6a8
+  Quick: 6473349e43b9271a8d43839d9ba1c442ed1b7ac4
+  R.swift: c533450b0f7dc494e0993f5f1a1db925d84c3006
+  R.swift.Library: 0fc583cb55a99e28901299cc451614cad1161962
+  RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
+  RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
+  RxSwift: ad5874f24bb0dbffd1e9bb8443604e3578796c7a
+  RxSwiftExt: 41251b448c8883765251af9bfcea651838094a06
+  SkeletonView: e37c282c1b228547b83daf47605f79c3aeb1df9a
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  SwiftLint: 79d48a17c6565dc286c37efb8322c7b450f95c67
+
+PODFILE CHECKSUM: c70d84cf51091278786467f3a77836947b0cea41
+
+COCOAPODS: 1.11.3

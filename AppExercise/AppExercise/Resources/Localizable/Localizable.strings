@@ -1,0 +1,62 @@
+/**
+ Rules for keys:
+ 
+ 1. Use namespace where appropriate.
+ e.g. `home.labels.welcome = "Welcome!";`
+
+ 2. Use hyphens to concatenate words in phrases. Underscores are discouraged since we're using R.swift.
+ e.g. `login-form.labels.first-name = "First name:";`
+
+ The R.swift generated method name: `loginFormLabelsFirstName`
+
+ 3. Use dots to separate namespaces and the proper key.
+
+ 4. For a word that can be used in any context, just use itself as the key. No need for namespacing.
+*/
+
+// MARK: - Shared
+any = "Any";
+back = "Back";
+cancel = "Cancel";
+clear = "Clear";
+close = "Close";
+continue = "Continue";
+default = "Default";
+dismiss = "Dismiss";
+done = "Done";
+later = "Later";
+okay = "Okay";
+skip = "Skip";
+settings = "Settings";
+description = "Description";
+hide = "Hide";
+plural = "%@s";
+reset = "Reset";
+save = "Save";
+updating = "Updating";
+creating = "Creating";
+anonymous = "Anonymous";
+edit = "Edit";
+delete = "Delete";
+yes = "Yes";
+no = "No";
+
+app.name = "App Name";
+
+/* Generic Error Messages */
+
+general-error.labels.type-unknown = "The application has encountered an unknown error. Our technical team will look into it urgently.";
+
+error.dev.unknown = "An unknown error has occured";
+error.dev.something.wrong = "Something went wrong";
+error.dev.authorization = "Authorization required";
+error.dev.data.unexpected = "Data expected from the server not found";
+error.dev.not.expected. = "Expected %@. Got nil instead.";
+error.dev.invalid.token = "Invalid token";
+
+dev.http = "HTTPStatusCode: %@; Message: %@;";
+
+status.success = "Success";
+
+version-info = "Version %@-%@";
+// END: - Shared
