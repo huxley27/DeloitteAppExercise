@@ -17,6 +17,7 @@ protocol AppConfigProtocol {
   /// API URL
   var apiUrl: String { get }
   var apiVersion: String { get }
+  var apiKey: String { get }
 
   // MARK: Defaults
 
@@ -35,6 +36,7 @@ extension AppConfigProtocol {
   var apiUrl: String { "\(baseUrl)/api" }
   var apiVersion: String { "v1" }
   var apiUrlWithVersion: String { "\(apiUrl)/\(apiVersion)" }
+  var apiKey: String { "96358825614a5d3b1a1c3fd87fca2b47" }
 
   var defaultPageSize: Int { 10 }
   var defaultPhotoCompression: Float { 0.7 }

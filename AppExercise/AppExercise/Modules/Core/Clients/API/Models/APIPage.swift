@@ -7,10 +7,20 @@
 //
 
 import Foundation
+import Alamofire
 
 struct APIPage: Equatable {
   let index: Int
   let size: Int
+  
+  var asParameters: Parameters {
+    var params: Parameters = [:]
+
+    params["page"] = index
+    params["per_page"] = size
+
+    return params
+  }
 }
 
 // MARK: - Static

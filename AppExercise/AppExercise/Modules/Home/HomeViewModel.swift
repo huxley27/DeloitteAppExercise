@@ -9,41 +9,85 @@
 import Foundation
 
 class HomeViewModel: HomeViewModelProtocol {
-//  var onSomeCallbackEvent: VoidResult?
-//
-//  private(set) var someVariable1: Int = 0
-//
-//  private let model: SomeModel
-//  private let service: SomeService
-//
-//  init(
-//    model: SomeModel,
-//    service: SomeService = App.shared.service
-//  ) {
-//    self.model = model
-//    self.service = service
-//  }
+  private let config: AppConfigProtocol = AppConfig()
+  
+  private(set) var flickrImageItemViewModels: [FlickrImageItemViewModelProtocol] = []
+
+  private(set) var hasFetchedAllFlickrImages: Bool = false
+  private var page: APIPage
+  
+  private(set) var flickrItems: [FlickrItem] = []
+  private let service: FlickrSearchServiceProtocol
+  
+  init(
+    page: APIPage = .default,
+    service: FlickrSearchServiceProtocol = App.shared.flickr
+  ) {
+    self.page = page
+    self.service = service
+  }
 }
 
 // MARK: - Methods
 
 extension HomeViewModel {
-//  func someFunction1(param1: Int) {
-//
-//  }
-//
-//  func someFunction2(
-//    param1: Int,
-//    param2: String,
-//    onSuccess: @escaping VoidResult,
-//    onError: @escaping ErrorResult
-//  ) {
-//
-//  }
-}
-
-// MARK: - Getters
-
-extension HomeViewModel {
-//  var someVariable2: String { model.property }
+  func getFlickrItems(
+    query: String?,
+    onSuccess: @escaping VoidResult,
+    onError: @escaping ErrorResult
+  ) {
+    guard
+      let query = query,
+      !hasFetchedAllFlickrImages
+    else {
+      return
+    }
+    
+    let params = FlickrSearchRequestParam(
+      method: "flickr.photos.search",
+      apiKey: config.apiKey,
+      text: query,
+      format: "json",
+      noJsonCallback: "1",
+      page: page.index,
+      perPage: page.size
+    )
+    
+    service.getImageSearch(
+      params: params,
+      onSuccess: { [weak self] flickItems in
+        guard let self = self else { return }
+        
+        if self.page.index == 1 {
+          self.flickrImageItemViewModels.removeAll()
+          self.flickrItems.removeAll()
+        }
+        self.page = APIPage(index: self.page.index + 1, size: self.page.size)
+        if flickItems.isEmpty {
+          self.hasFetchedAllFlickrImages = true
+        } else {
+          self.flickrItems.append(contentsOf: flickItems)
+          self.flickrImageItemViewModels.append(contentsOf: flickItems.map({ (flickItem) -> FlickrImageItemViewModelProtocol in
+            FlickrImageItemViewModel(flickrItem: flickItem)
+          }))
+        }
+        onSuccess()
+      },
+      onError: onError
+    )
+  }
+  
+  func refreshUserBabbles(
+    query: String?,
+    onSuccess: @escaping VoidResult,
+    onError: @escaping ErrorResult
+  ) {
+    hasFetchedAllFlickrImages = false
+    page = APIPage(index: 1, size: page.size)
+    getFlickrItems(
+      query: query,
+      onSuccess: onSuccess,
+      onError: onError
+    )
+  }
 }

@@ -9,15 +9,19 @@
 import Foundation
 
 protocol HomeViewModelProtocol {
-//  var onSomeCallbackEvent: VoidResult? { get set }
-//  var someVariable1: Int { get set }
-//  var someVariable2: String { get }
-//
-//  func someFunction1(param1: Int)
-//  func someFunction2(
-//    param1: Int,
-//    param2: String,
-//    onSuccess: @escaping VoidResult,
-//    onError: @escaping ErrorResult
-//  )
+  var flickrImageItemViewModels: [FlickrImageItemViewModelProtocol] { get }
+  var flickrItems: [FlickrItem] { get }
+  var hasFetchedAllFlickrImages: Bool { get }
+  
+  func getFlickrItems(
+    query: String?,
+    onSuccess: @escaping VoidResult,
+    onError: @escaping ErrorResult
+  )
+  
+  func refreshUserBabbles(
+    query: String?,
+    onSuccess: @escaping VoidResult,
+    onError: @escaping ErrorResult
+  )
 }

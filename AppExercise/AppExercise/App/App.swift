@@ -22,7 +22,8 @@ class App {
   private(set) var api: APIClient!
 
   // MARK: Shared
-
+  
+  private(set) var flickr: FlickrSearchServiceProtocol!
   private(set) var errorHandling: ErrorHandlingServiceProtocol!
 
 
@@ -42,6 +43,7 @@ class App {
       version: "v1"
     )
 
+    flickr = FlickrSearchService(api: api)
     errorHandling = ErrorHandlingService()
 
     setup()
