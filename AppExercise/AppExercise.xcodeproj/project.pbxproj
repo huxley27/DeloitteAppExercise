@@ -423,13 +423,16 @@
 		D01C531A28847CB600B5E225 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		D01C532628848E1300B5E225 /* DummyFlickrPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyFlickrPhoto.swift; sourceTree = "<group>"; };
 		D01C532828848F8300B5E225 /* FlickrPhotoTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrPhotoTest.swift; sourceTree = "<group>"; };
+
 		D032AA4528807E0B00B96A15 /* CollectionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewModel.swift; sourceTree = "<group>"; };
 		D032AA4628807E0B00B96A15 /* CollectionViewModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewModelProtocol.swift; sourceTree = "<group>"; };
 		D032AA4728807E0B00B96A15 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		D032AA4B28808B6300B96A15 /* FlickrPhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrPhotos.swift; sourceTree = "<group>"; };
+
 		D032AA4E28817AF000B96A15 /* EmptyStateItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateItem.swift; sourceTree = "<group>"; };
 		D032AA5028817C5200B96A15 /* EmptyStateItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyStateItem.xib; sourceTree = "<group>"; };
 		D03FAA8E2883533300BDAE43 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+
 		D08414D724624A29001ADE1F /* LeftAlignedIconMDCButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftAlignedIconMDCButton.swift; sourceTree = "<group>"; };
 		D08505CA287F56F200E58ACF /* FlickrImageItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlickrImageItem.xib; sourceTree = "<group>"; };
 		D08505CC287F56FA00E58ACF /* FlickrImageItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrImageItem.swift; sourceTree = "<group>"; };
@@ -1312,6 +1315,7 @@
 		A1E5F584243DD8C300F128AA /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				D032AA4428807E0B00B96A15 /* CollectionView */,
 				281731681C9C4BBC006237C7 /* ViewController.swift */,
 				2817316A1C9C4BDA006237C7 /* TableViewController.swift */,
 				A141D56824C0226D000A699C /* StaticTableViewController.swift */,
@@ -1717,6 +1721,7 @@
 			path = Flickr;
 			sourceTree = "<group>";
 		};
+
 		D032AA4428807E0B00B96A15 /* CollectionView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1727,6 +1732,7 @@
 			path = CollectionView;
 			sourceTree = "<group>";
 		};
+
 		D032AA4D28817AD800B96A15 /* EmptyState */ = {
 			isa = PBXGroup;
 			children = (
@@ -1736,6 +1742,7 @@
 			path = EmptyState;
 			sourceTree = "<group>";
 		};
+
 		D08505C6287F56A000E58ACF /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -2130,6 +2137,7 @@
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireNetworkActivityIndicator/AlamofireNetworkActivityIndicator.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireNetworkActivityLogger/AlamofireNetworkActivityLogger.framework",
+				"${BUILT_PRODUCTS_DIR}/Blueprints/Blueprints.framework",
 				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
 				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
@@ -2157,6 +2165,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireNetworkActivityIndicator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireNetworkActivityLogger.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Blueprints.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
@@ -2270,6 +2279,7 @@
 				A9E381BE22B63345000A16F1 /* AnyDecodable.swift in Sources */,
 				9EFD8A2A2518F6910069515D /* UIView+Responder.swift in Sources */,
 				A171F22C2457D9EE00858B6B /* UINavigationBar+Transparency.swift in Sources */,
+				D032AA4828807E0B00B96A15 /* CollectionViewModel.swift in Sources */,
 				A13801B525394EB3008C3DE7 /* ProgressPresenterProtocol.swift in Sources */,
 				A1B2FB152474DC8D00A36395 /* MDCButton+Stylable.swift in Sources */,
 				9E6F94CE24C7DD25009A3C7C /* UICollectionViewCell+Static.swift in Sources */,
@@ -2367,6 +2377,7 @@
 				A9BD7A6C2282BA4C00A0B2CD /* R.generated.swift in Sources */,
 				281731691C9C4BBC006237C7 /* ViewController.swift in Sources */,
 				9EE21C9A2629826400565F99 /* UIScreen+Utils.swift in Sources */,
+				D032AA4A28807E0B00B96A15 /* CollectionViewController.swift in Sources */,
 				A94A37242331E55D0040412F /* UIFont+Utils.swift in Sources */,
 				9EFD8A2E2518F6990069515D /* Locale+Currency.swift in Sources */,
 				E46B37C5263A228A0071DFE6 /* Theme+Component.swift in Sources */,
@@ -2406,6 +2417,7 @@
 				9EFD8A312518F6A00069515D /* Dictionary+Casting.swift in Sources */,
 				A94B14CE240A7DCC003B4CA0 /* AppDelegate.swift in Sources */,
 				A18DAA7024AD6915009A6731 /* GenericPickerView.swift in Sources */,
+				D032AA4C28808B6300B96A15 /* FlickrPhotos.swift in Sources */,
 				A110469C257783630009C271 /* APTextFieldProtocol.swift in Sources */,
 				A95E961F231B9D4400258496 /* VerticalStackViewController.swift in Sources */,
 				A1B2318024820525007A6E27 /* UIApplication+KeyWindow.swift in Sources */,
@@ -2420,6 +2432,7 @@
 				A191842525F1EC60006B6214 /* APTextInputControllerFilled.swift in Sources */,
 				A1F5008224B2BBE1008B8CA9 /* UIViewController+Child.swift in Sources */,
 				A141D54B24C00F0A000A699C /* DialogOption.swift in Sources */,
+				D032AA4928807E0B00B96A15 /* CollectionViewModelProtocol.swift in Sources */,
 				E499770325C6544100A99F6A /* APButton.swift in Sources */,
 				28C282441C7797CA003ECA4F /* Constants.swift in Sources */,
 				A166768924B81F800093493E /* Date+Static.swift in Sources */,

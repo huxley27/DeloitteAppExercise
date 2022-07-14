@@ -23,6 +23,7 @@ def app_pods
   pod 'ImageViewer.swift/Fetcher', '~> 3.0'
   pod 'Hero', '~> 1.6.1'
   pod 'ImageSlideshow', '~> 1.9.2'
+  pod 'Blueprints', '0.13.1'
 
   # ReactiveX
   pod 'RxSwift', '5.1.0'

@@ -11,6 +11,23 @@ import Foundation
 import SVProgressHUD
 
 class HUDProgressPresenter: ProgressPresenterProtocol {
+  func presentIndefiniteProgress(
+    from source: UIViewController
+  ) {
+    presentIndefiniteProgress(
+      message: nil,
+      from: source
+    )
+  }
+
+  func presentIndefiniteProgress(
+    message: String?,
+    from source: UIViewController
+  ) {
+    SVProgressHUD.setDefaultMaskType(.black)
+    SVProgressHUD.show(withStatus: message)
+  }
+  
   func presentProgress(
     value: Float,
     from source: UIViewController

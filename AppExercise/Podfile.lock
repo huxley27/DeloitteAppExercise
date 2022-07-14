@@ -6,6 +6,7 @@ PODS:
     - Alamofire (~> 4.8)
   - AlamofireNetworkActivityLogger (2.4.0):
     - Alamofire (~> 4.8)
+  - Blueprints (0.13.1)
   - ChameleonFramework (2.1.0):
     - ChameleonFramework/Default (= 2.1.0)
   - ChameleonFramework/Default (2.1.0)
@@ -168,6 +169,7 @@ DEPENDENCIES:
   - AlamofireImage (~> 3.5.2)
   - AlamofireNetworkActivityIndicator (~> 2.4.0)
   - AlamofireNetworkActivityLogger (~> 2.4.0)
+  - Blueprints (= 0.13.1)
   - ChameleonFramework (~> 2.1.0)
   - Hero (~> 1.6.1)
   - ImageSlideshow (~> 1.9.2)
@@ -198,6 +200,7 @@ SPEC REPOS:
     - AlamofireImage
     - AlamofireNetworkActivityIndicator
     - AlamofireNetworkActivityLogger
+    - Blueprints
     - ChameleonFramework
     - Hero
     - ImageSlideshow
@@ -229,6 +232,7 @@ SPEC CHECKSUMS:
   AlamofireImage: 63cfe3baf1370be6c498149687cf6db3e3b00999
   AlamofireNetworkActivityIndicator: 9acc3de3ca6645bf0efed462396b0df13dd3e7b8
   AlamofireNetworkActivityLogger: 6d3398c692d2c5d83b0c58793537860aca1e383d
+  Blueprints: ddd6ab1e455c98471aaef2fdd0b09b5f9b53af5b
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   Hero: 215865ba3ae41dd9bb08cd6c60a645529c6fc94b
   ImageSlideshow: be305b54eaf2b2cfc7a7141c7c734605d44dc07d
@@ -255,6 +259,6 @@ SPEC CHECKSUMS:
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftLint: 79d48a17c6565dc286c37efb8322c7b450f95c67
 
-PODFILE CHECKSUM: 5049a8d41bf120b8975cdba51709663a3c918abd
+PODFILE CHECKSUM: 72b341ac1ef13d7f2f8aa565bb1435c9c0671650
 
 COCOAPODS: 1.11.3

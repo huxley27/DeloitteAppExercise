@@ -12,7 +12,6 @@
             <objects>
                 <tabBarController id="NE3-ez-4Dq" customClass="DashboardController" customModule="AppExercise" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="mHK-Wq-1Jg"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="cgb-Lb-8WS" customClass="DashboardTabbar" customModule="AppExercise" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

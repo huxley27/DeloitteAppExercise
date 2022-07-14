@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 
 protocol FlickrImageItemViewModelProtocol {
-  var flickItem: FlickrItem { get }
   var flickItemImageUrl: URL? { get }
   var flickItemPlaceholderImage: UIImage? { get }
 }

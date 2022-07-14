@@ -16,13 +16,25 @@ class FlickrImageItem: UICollectionViewCell {
     }
   }
   
-  @IBOutlet weak private(set) var imageView: UIImageView!
+  @IBOutlet private(set) var container: UIView!
+  @IBOutlet private(set) var imageView: UIImageView!
+  
+  // MARK: Overrides
+
+  override func awakeFromNib() {
+    setup()
+  }
 }
 
 // MARK: - Setup
 
 private extension FlickrImageItem {
+  func setup() {
+    container.layer.cornerRadius = 8
+  }
+  
   func setupFromViewModel() {
+    container.backgroundColor = .white
     imageView.setImageWithURL(
       viewModel.flickItemImageUrl,
       placeholder: viewModel.flickItemPlaceholderImage,
@@ -39,6 +51,7 @@ private extension FlickrImageItem {
     return { [weak self] image in
       guard let self = self else { return }
       self.imageView.image = image
+      self.container.backgroundColor = .black
     }
   }
   

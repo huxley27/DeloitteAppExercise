@@ -13,30 +13,27 @@ struct APIResponse {
   /// Intentionally set to Optional-Any as it could be of any type or just be nil.
   /// It's up to the call site to determine the exact type of its value.
   /// If it's a Decodable type, use the method `decodedValue(forKeyPath:decoder:)`.
-  let data: Any?
-  let statusCode: HTTPStatusCode
-
+  let photos: Any?
+  
   /// Could be a success or an error message depending on the type of result.
-  let message: String?
-  let errorCode: APIErrorCode
+  let stat: String?
+  let errorCode: APIErrorCode?
 
   let errors: [String: [String]]?
 }
 
 extension APIResponse: Decodable {
   enum CodingKeys: String, CodingKey {
-    case data, message, errors
-    case statusCode = "http_status"
+    case photos, stat, errors
     case errorCode = "error_code"
   }
 
   init(from decoder: Decoder) throws {
     let container = try decoder.container(keyedBy: CodingKeys.self)
 
-    data = (try container.decodeIfPresent(AnyDecodable.self, forKey: .data))?.value
-    message = try container.decodeIfPresent(String.self, forKey: .message)
+    photos = (try container.decodeIfPresent(AnyDecodable.self, forKey: .photos))?.value
+    stat = try container.decodeIfPresent(String.self, forKey: .stat)
     errors = try container.decodeIfPresent([String: [String]].self, forKey: .errors)
-    statusCode = try container.decode(HTTPStatusCode.self, forKey: .statusCode)
     errorCode = (try? container.decode(APIErrorCode.self, forKey: .errorCode)) ?? .default
   }
 }
@@ -72,7 +69,7 @@ extension APIResponse {
   ///
   /// - returns: The decoded value or nil.
   func decodedValue<T>(forKeyPath: String? = nil, decoder: JSONDecoder? = nil) -> T? where T: Decodable {
-    guard var payload = data else { return nil }
+    guard var payload = photos else { return nil }
 
     if let keyPath = forKeyPath {
       guard let d = nestedData(keyPath) else { return nil }
@@ -97,7 +94,7 @@ extension APIResponse {
 
   /// Returns the data at the given `keyPath`. Nil if path doesn't exist.
   private func nestedData(_ keyPath: String) -> Any? {
-    guard let payload = data, !keyPath.isEmpty else { return nil }
+    guard let payload = photos, !keyPath.isEmpty else { return nil }
     guard let dict = payload as? [String: Any] else { return nil }
     return dict[keyPath: keyPath] as Any
   }

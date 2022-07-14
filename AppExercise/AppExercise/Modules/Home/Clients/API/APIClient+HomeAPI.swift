@@ -13,12 +13,12 @@ extension APIClient: HomeAPI {
   @discardableResult
   func getImageSearch(
     params: FlickrSearchRequestParam,
-    onSuccess: @escaping SingleResult<[FlickrItem]>,
+    onSuccess: @escaping SingleResult<FlickrPhotos>,
     onError: @escaping ErrorResult
   ) -> RequestProtocol {
     
     return request(
-      "/services/rest/",
+      "services/rest/",
       parameters: params.dictionary,
       success: decodeModel(
         onSuccess: onSuccess,

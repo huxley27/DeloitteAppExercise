@@ -15,13 +15,17 @@ class FlickrImageItemViewModel {
   init(flickrItem: FlickrItem) {
     self.flickrItem = flickrItem
   }
+  
+  func flickImageURLBuilder() -> URL? {
+    URL(string: "https://farm\(flickrItem.farm).static.flickr.com/\(flickrItem.server)/\(flickrItem.id)_\(flickrItem.secret).jpg")
+  }
 }
 
 // MARK: - Getters
 
 extension FlickrImageItemViewModel: FlickrImageItemViewModelProtocol {
   var flickItemImageUrl: URL? {
-    URL(string: "")
+    flickImageURLBuilder()
   }
   
   var flickItemPlaceholderImage: UIImage? {

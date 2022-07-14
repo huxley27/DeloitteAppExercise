@@ -17,6 +17,7 @@ extension DashboardController {
   override func viewDidLoad() {
     super.viewDidLoad()
     setup()
+    self.tabBar.isHidden = true
   }
 }
 
@@ -28,14 +29,16 @@ private extension DashboardController {
   }
 
   func setupVMs() {
-    setupProfileTab()
+    setupHomeTab()
   }
 
-  func setupProfileTab() {
-//    guard let vc = initialController(for: .profile) as? AccountController else {
-//      preconditionFailure("Expecting viewController of type MyProfileController")
-//    }
-//    vc.viewModel = AccountViewModel()
+  func setupHomeTab() {
+    guard let vc = initialController(for: .home) as? HomeController else {
+      preconditionFailure("Expecting viewController of type ViewController")
+    }
+    vc.hidesBottomBarWhenPushed = true
+    vc.viewModel = HomeViewModel()
+    vc.collectionViewVM = CollectionViewModel()
   }
 
   func initialController(for tab: Tab) -> UIViewController {
@@ -51,7 +54,6 @@ private extension DashboardController {
 
 private enum Tab: Int {
   case home = 0
-  case profile
 
   var index: Int { rawValue }
 }

@@ -11,14 +11,12 @@ import UIKit
 
 import RxCocoa
 import RxSwift
+import Blueprints
 
-class HomeController: ViewController {
+class HomeController: CollectionViewController {
   var viewModel: HomeViewModelProtocol!
   
-  // @IBOutlet private(set) var label: UILabel!
-  // @IBOutlet private(set) var field: APTextField!
-  
-  // private(set) var fieldInputController: MDCInputControllerBase!
+  @IBOutlet weak private(set) var searchBar: UISearchBar!
 }
 
 // MARK: - Lifecycle
@@ -27,6 +25,18 @@ extension HomeController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    let blueprintLayout = VerticalBlueprintLayout(
+      itemsPerRow: 3,
+      height: 100,
+      minimumInteritemSpacing: 8,
+      minimumLineSpacing: 8,
+      sectionInset: EdgeInsets(top: 10, left: 10, bottom: 10, right: 10),
+      stickyHeaders: false,
+      stickyFooters: false
+    )
+
+    collectionView?.collectionViewLayout = blueprintLayout
+    
     setup()
     bind()
   }
@@ -43,7 +53,18 @@ extension HomeController {
 
 private extension HomeController {
   func setup() {
-
+    self.navigationController?.setNavigationBarHidden(true, animated: true)
+    registerCell()
+    setupCollectionView()
+  }
+  
+  func registerCell() {
+    collectionView?.delegate = self
+    collectionView?.dataSource = self
+    collectionView?.register(
+      UINib(resource: R.nib.flickrImageItem),
+      forCellWithReuseIdentifier: R.nib.flickrImageItem.name
+    )
   }
 }
 
@@ -51,53 +72,123 @@ private extension HomeController {
 
 private extension HomeController {
   func bind() {
-
+    bindSearchBar()
+    updateCollectionViewHandler()
+  }
+  
+  func updateCollectionViewHandler() {
+    onPaginateSwipeUp = handlePaginateSwipeUp()
+    onRefreshPullDown = handleRefreshPullDown()
+  }
+  
+  func bindSearchBar() {
+    searchBar.rx.text.orEmpty
+      .debounce(.seconds(1), scheduler: MainScheduler.instance)
+      .distinctUntilChanged()
+      .subscribe(onNext: handleSearchResult())
+      .disposed(by: rx.disposeBag)
   }
 }
 
-// MARK: - Router
+// MARK: - Fetch Methods
 
 private extension HomeController {
-//  func presentSomeController() {
-//    let vc = R.storyboard.someController.SomeController()!
-//    vc.viewModel = SomeViewModel()
-//    navigationController?.pushViewController(vc, animated: true)
-//  }
-}
-
-// MARK: - Actions
-
-private extension HomeController {
-//  @IBAction
-//  func someButtonTapped(_ sender: Any) {
-//    viewModel.someFunction2(
-//      param1: 0,
-//      param2: "",
-//      onSuccess: handleSomeSuccess(),
-//      onError: handleError()
-//    )
-//  }
+  func refreshImageFlickImageSearch() {
+    progressPresenter.presentIndefiniteProgress(from: self)
+    viewModel.refreshFlickrItems(
+      query: searchBar.text,
+      onSuccess: handleFetchResult(),
+      onError: handleError()
+    )
+  }
+  
+  func getMoreFlickrImages() {
+    viewModel?.getFlickrItems(
+      query: searchBar.text,
+      onSuccess: handleFetchResult(),
+      onError: handleError()
+    )
+  }
 }
 
 // MARK: - Event Handlers
 
 private extension HomeController {
-//  func handleSomeSuccess() -> VoidResult {
-//    return { [weak self] in
-//      guard let s = self else { return }
-//      // TODO: Do something here
-//    }
-//  }
+  func handleSearchResult() -> SingleResult<String> {
+    return { [weak self] queryText in
+      guard let self = self else { return }
+      
+      self.progressPresenter.presentIndefiniteProgress(from: self)
+      self.viewModel.refreshFlickrItems(
+        query: queryText,
+        onSuccess: self.handleFetchResult(),
+        onError: self.handleError()
+      )
+    }
+  }
+  
+  func handleRefreshPullDown() -> VoidResult {
+    return { [weak self] in
+      guard let self = self else { return }
+      self.refreshImageFlickImageSearch()
+    }
+  }
+  
+  func handlePaginateSwipeUp() -> VoidResult {
+    return { [weak self] in
+      guard let self = self else { return }
+      self.collectionViewVM.isLoading = true
+      self.getMoreFlickrImages()
+    }
+  }
+  
+  func handleFetchResult() -> VoidResult {
+    return { [weak self] in
+      guard let self = self else { return }
+      self.collectionView?.reloadData()
+      self.collectionView?.layoutIfNeeded()
+      self.collectionView?.scrollRectToVisible(CGRect.zero, animated: true)
+      self.collectionViewVM.isLoading = false
+      self.progressPresenter.dismiss()
+    }
+    
+  }
 }
 
-// MARK: - Helpers
+// MARK: - CollectionView Delegates and Datasource
+extension HomeController {
+  
+  override func collectionView(
+    _ collectionView: UICollectionView,
+    cellForItemAt indexPath: IndexPath
+  ) -> UICollectionViewCell {
+    guard let cell = collectionView.dequeueReusableCell(
+      withReuseIdentifier: R.nib.flickrImageItem.name,
+      for: indexPath
+    ) as? FlickrImageItem else { return FlickrImageItem() }
+    
+    let cellModel = viewModel.flickrImageItemViewModels[indexPath.row]
+    cell.viewModel = cellModel
+    
+    return cell
+  }
 
-private extension HomeController {
-
+  override func collectionView(
+    _ collectionView: UICollectionView,
+    numberOfItemsInSection section: Int
+  ) -> Int {
+    return viewModel.flickrImageItemViewModels.count
+  }
+  
+  
+  func collectionView(
+    _ collectionView: UICollectionView,
+    layout collectionViewLayout: UICollectionViewLayout,
+    sizeForItemAt indexPath: IndexPath
+  ) -> CGSize {
+    return .init(
+      width: view.frame.width,
+      height: 100
+    )
+  }
 }
-
-// MARK: - SomeControllerProtocol
-
-//extension HomeController: SomeControllerProtocol {
-//
-//}

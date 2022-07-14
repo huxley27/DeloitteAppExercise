@@ -36,7 +36,7 @@ extension APIClientProtocol {
   ///
   /// - returns: URL
   func endpointURL(_ resourcePath: String, version: String? = nil) -> URL {
-    return baseURL.appendingPathComponent("\(version ?? self.version)/\(resourcePath)")
+    return baseURL.appendingPathComponent("/\(resourcePath)")
   }
 
   /// Returns the default set of HTTP headers.

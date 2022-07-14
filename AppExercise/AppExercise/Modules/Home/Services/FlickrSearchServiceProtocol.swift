@@ -11,7 +11,7 @@ import Foundation
 protocol FlickrSearchServiceProtocol {
   func getImageSearch(
     params: FlickrSearchRequestParam,
-    onSuccess: @escaping SingleResult<[FlickrItem]>,
+    onSuccess: @escaping SingleResult<FlickrPhotos>,
     onError: @escaping ErrorResult
   )
 }

@@ -10,6 +10,15 @@ import Foundation
 import UIKit
 
 protocol ProgressPresenterProtocol {
+  func presentIndefiniteProgress(
+    from source: UIViewController
+  )
+  
+  func presentIndefiniteProgress(
+    message: String?,
+    from source: UIViewController
+  )
+  
   func presentProgress(
     value: Float,
     from source: UIViewController

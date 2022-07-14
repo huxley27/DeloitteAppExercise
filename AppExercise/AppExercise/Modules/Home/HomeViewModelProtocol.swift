@@ -19,7 +19,7 @@ protocol HomeViewModelProtocol {
     onError: @escaping ErrorResult
   )
   
-  func refreshUserBabbles(
+  func refreshFlickrItems(
     query: String?,
     onSuccess: @escaping VoidResult,
     onError: @escaping ErrorResult

@@ -9,7 +9,6 @@
 import Foundation
 
 struct FlickrItem: Codable {
-  
   var id: String
   var owner: String
   var secret: String

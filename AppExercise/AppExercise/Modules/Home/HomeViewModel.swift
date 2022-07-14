@@ -55,7 +55,7 @@ extension HomeViewModel {
     
     service.getImageSearch(
       params: params,
-      onSuccess: { [weak self] flickItems in
+      onSuccess: { [weak self] flickrPhotos in
         guard let self = self else { return }
         
         if self.page.index == 1 {
@@ -63,13 +63,17 @@ extension HomeViewModel {
           self.flickrItems.removeAll()
         }
         self.page = APIPage(index: self.page.index + 1, size: self.page.size)
-        if flickItems.isEmpty {
+        if flickrPhotos.photo.isEmpty {
           self.hasFetchedAllFlickrImages = true
         } else {
-          self.flickrItems.append(contentsOf: flickItems)
-          self.flickrImageItemViewModels.append(contentsOf: flickItems.map({ (flickItem) -> FlickrImageItemViewModelProtocol in
-            FlickrImageItemViewModel(flickrItem: flickItem)
-          }))
+          self.flickrItems.append(contentsOf: flickrPhotos.photo)
+          self.flickrImageItemViewModels.append(
+            contentsOf: flickrPhotos.photo.map(
+              { (flickItem) -> FlickrImageItemViewModelProtocol in
+                FlickrImageItemViewModel(flickrItem: flickItem)
+              }
+            )
+          )
         }
         onSuccess()
       },
@@ -77,7 +81,7 @@ extension HomeViewModel {
     )
   }
   
-  func refreshUserBabbles(
+  func refreshFlickrItems(
     query: String?,
     onSuccess: @escaping VoidResult,
     onError: @escaping ErrorResult

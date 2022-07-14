@@ -14,7 +14,7 @@ protocol HomeAPI {
   @discardableResult
   func getImageSearch(
     params: FlickrSearchRequestParam,
-    onSuccess: @escaping SingleResult<[FlickrItem]>,
+    onSuccess: @escaping SingleResult<FlickrPhotos>,
     onError: @escaping ErrorResult
   ) -> RequestProtocol
 }

@@ -41,6 +41,10 @@
                                         </collectionViewCellContentView>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="5hi-2W-uC6" id="HyI-Qv-XtL"/>
+                                    <outlet property="delegate" destination="5hi-2W-uC6" id="Otf-Kq-fak"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Rmj-9j-8nx"/>
@@ -56,6 +60,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="mom-wE-sSR"/>
+                    <connections>
+                        <outlet property="collectionView" destination="2vQ-Do-Hnd" id="j8E-Pi-JI6"/>
+                        <outlet property="searchBar" destination="Onb-Ho-qF2" id="Tc0-wY-tlt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EDi-ey-zgy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

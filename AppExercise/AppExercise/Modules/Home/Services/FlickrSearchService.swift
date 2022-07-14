@@ -22,7 +22,7 @@ class FlickrSearchService: FlickrSearchServiceProtocol {
 extension FlickrSearchService {
   func getImageSearch(
     params: FlickrSearchRequestParam,
-    onSuccess: @escaping SingleResult<[FlickrItem]>,
+    onSuccess: @escaping SingleResult<FlickrPhotos>,
     onError: @escaping ErrorResult
   ) {
     api.getImageSearch(

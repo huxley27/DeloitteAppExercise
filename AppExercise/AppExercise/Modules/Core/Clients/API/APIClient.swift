@@ -123,8 +123,8 @@ extension DataRequest {
           code.isRequestError || code.isServerError {
           let info = APIClientFailedRequestInfo(
             status: code,
-            message: resp.message ?? S.generalErrorLabelsTypeUnknown(),
-            errorCode: resp.errorCode
+            message: resp.stat ?? S.generalErrorLabelsTypeUnknown(),
+            errorCode: resp.errorCode ?? .default
           )
           let apiError = APIClientError.failedRequest(info)
           App.shared.errorHandling.processAPIError(apiError)
