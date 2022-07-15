@@ -25,18 +25,6 @@ extension HomeController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    let blueprintLayout = VerticalBlueprintLayout(
-      itemsPerRow: 3,
-      height: 100,
-      minimumInteritemSpacing: 8,
-      minimumLineSpacing: 8,
-      sectionInset: EdgeInsets(top: 10, left: 10, bottom: 10, right: 10),
-      stickyHeaders: false,
-      stickyFooters: false
-    )
-
-    collectionView?.collectionViewLayout = blueprintLayout
-    
     setup()
     bind()
   }
@@ -56,6 +44,7 @@ private extension HomeController {
     self.navigationController?.setNavigationBarHidden(true, animated: true)
     registerCell()
     setupCollectionView()
+    setupCollectionViewLayout(forEmptyState: true)
   }
   
   func registerCell() {
@@ -65,6 +54,25 @@ private extension HomeController {
       UINib(resource: R.nib.flickrImageItem),
       forCellWithReuseIdentifier: R.nib.flickrImageItem.name
     )
+    collectionView?.register(
+      UINib(resource: R.nib.emptyStateItem),
+      forCellWithReuseIdentifier: R.nib.emptyStateItem.name
+    )
+  }
+  
+  func setupCollectionViewLayout(forEmptyState: Bool = false) {
+    let blueprintLayout = VerticalBlueprintLayout(
+      itemsPerRow: forEmptyState ? 1 : 3,
+      height: 100,
+      minimumInteritemSpacing: 8,
+      minimumLineSpacing: 8,
+      sectionInset: EdgeInsets(top: 10, left: 10, bottom: 10, right: 10),
+      stickyHeaders: false,
+      stickyFooters: false
+    )
+
+    collectionView?.collectionViewLayout = blueprintLayout
+    collectionView?.isScrollEnabled = !forEmptyState
   }
 }
 
@@ -145,6 +153,7 @@ private extension HomeController {
   func handleFetchResult() -> VoidResult {
     return { [weak self] in
       guard let self = self else { return }
+      self.setupCollectionViewLayout(forEmptyState: self.viewModel.flickrImageItemViewModels.isEmpty)
       self.collectionView?.reloadData()
       self.collectionView?.layoutIfNeeded()
       self.collectionView?.scrollRectToVisible(CGRect.zero, animated: true)
@@ -162,22 +171,30 @@ extension HomeController {
     _ collectionView: UICollectionView,
     cellForItemAt indexPath: IndexPath
   ) -> UICollectionViewCell {
-    guard let cell = collectionView.dequeueReusableCell(
-      withReuseIdentifier: R.nib.flickrImageItem.name,
-      for: indexPath
-    ) as? FlickrImageItem else { return FlickrImageItem() }
-    
-    let cellModel = viewModel.flickrImageItemViewModels[indexPath.row]
-    cell.viewModel = cellModel
-    
-    return cell
+    if viewModel.flickrImageItemViewModels.isEmpty {
+      guard let cell = collectionView.dequeueReusableCell(
+        withReuseIdentifier: R.nib.emptyStateItem.name,
+        for: indexPath
+      ) as? EmptyStateItem else { return EmptyStateItem() }
+      return cell
+    } else {
+      guard let cell = collectionView.dequeueReusableCell(
+        withReuseIdentifier: R.nib.flickrImageItem.name,
+        for: indexPath
+      ) as? FlickrImageItem else { return FlickrImageItem() }
+      
+      let cellModel = viewModel.flickrImageItemViewModels[indexPath.row]
+      cell.viewModel = cellModel
+      
+      return cell
+    }
   }
 
   override func collectionView(
     _ collectionView: UICollectionView,
     numberOfItemsInSection section: Int
   ) -> Int {
-    return viewModel.flickrImageItemViewModels.count
+    return viewModel.flickrImageItemViewModels.isEmpty ? 1 : viewModel.flickrImageItemViewModels.count
   }
   
   
@@ -186,9 +203,10 @@ extension HomeController {
     layout collectionViewLayout: UICollectionViewLayout,
     sizeForItemAt indexPath: IndexPath
   ) -> CGSize {
+    let height = viewModel.flickrImageItemViewModels.isEmpty ? view.frame.height - searchBar.frame.height - 100.0 : 100.0
     return .init(
       width: view.frame.width,
-      height: 100
+      height: height
     )
   }
 }

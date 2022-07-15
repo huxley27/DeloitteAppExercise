@@ -432,7 +432,6 @@
 		D032AA4E28817AF000B96A15 /* EmptyStateItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateItem.swift; sourceTree = "<group>"; };
 		D032AA5028817C5200B96A15 /* EmptyStateItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyStateItem.xib; sourceTree = "<group>"; };
 		D03FAA8E2883533300BDAE43 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
-
 		D08414D724624A29001ADE1F /* LeftAlignedIconMDCButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftAlignedIconMDCButton.swift; sourceTree = "<group>"; };
 		D08505CA287F56F200E58ACF /* FlickrImageItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlickrImageItem.xib; sourceTree = "<group>"; };
 		D08505CC287F56FA00E58ACF /* FlickrImageItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrImageItem.swift; sourceTree = "<group>"; };
@@ -2025,6 +2024,7 @@
 			files = (
 				0BC9178A23FAD10C0090E963 /* SFProText-Semibold.otf in Resources */,
 				0BC9178C23FAD10C0090E963 /* SFProText-Medium.otf in Resources */,
+				D032AA5128817C5200B96A15 /* EmptyStateItem.xib in Resources */,
 				A9BD7A592282922A00A0B2CD /* Localizable.stringsdict in Resources */,
 				0BC9179723FAD1980090E963 /* SFProDisplay-Semibold.otf in Resources */,
 				A1A01D292652324200D01262 /* VersionInfoView.xib in Resources */,
@@ -2321,6 +2321,7 @@
 				A1D98E2A24B571660010D8C8 /* DialogPresenterProtocol.swift in Sources */,
 				D08505DB287F589500E58ACF /* APIClient+HomeAPI.swift in Sources */,
 				A141D55C24C010C1000A699C /* InfoAction+Snackbar.swift in Sources */,
+				D032AA4F28817AF000B96A15 /* EmptyStateItem.swift in Sources */,
 				A1BBDB8324B8396B00BE117B /* TimeZone+Static.swift in Sources */,
 				A1E9354D25AEDC300036E053 /* Observable+Dictionary.swift in Sources */,
 				A1C32153247F385C001345BB /* RequestProtocol.swift in Sources */,
