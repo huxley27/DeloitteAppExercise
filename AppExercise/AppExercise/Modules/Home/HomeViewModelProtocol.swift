@@ -13,15 +13,16 @@ protocol HomeViewModelProtocol {
   var flickrItems: [FlickrItem] { get }
   var hasFetchedAllFlickrImages: Bool { get }
   
-  func getFlickrItems(
-    query: String?,
+  func fetchRecentFlickrImages(
     onSuccess: @escaping VoidResult,
     onError: @escaping ErrorResult
   )
   
-  func refreshFlickrItems(
-    query: String?,
+  func searchFlickrImages(
+    with query: String,
     onSuccess: @escaping VoidResult,
     onError: @escaping ErrorResult
   )
+  
+  func resetToFirstPage()
 }

@@ -31,27 +31,50 @@ class HomeViewModel: HomeViewModelProtocol {
 // MARK: - Methods
 
 extension HomeViewModel {
-  func getFlickrItems(
-    query: String?,
+  func fetchRecentFlickrImages(
     onSuccess: @escaping VoidResult,
     onError: @escaping ErrorResult
   ) {
-    guard
-      let query = query,
-      !hasFetchedAllFlickrImages
-    else {
-      return
-    }
-    
     let params = FlickrSearchRequestParam(
-      method: "flickr.photos.search",
+      method: .recent,
+      apiKey: config.apiKey,
+      text: nil,
+      format: "json",
+      noJsonCallback: "1",
+      page: page.index,
+      perPage: 20
+    )
+    getFlickrItems(params: params, onSuccess: onSuccess, onError: onError)
+  }
+  
+  func searchFlickrImages(
+    with query: String,
+    onSuccess: @escaping VoidResult,
+    onError: @escaping ErrorResult
+  ) {
+    let params = FlickrSearchRequestParam(
+      method: .search,
       apiKey: config.apiKey,
       text: query,
       format: "json",
       noJsonCallback: "1",
       page: page.index,
-      perPage: page.size
+      perPage: 20
     )
+    getFlickrItems(params: params, onSuccess: onSuccess, onError: onError)
+  }
+
+  func resetToFirstPage() {
+    hasFetchedAllFlickrImages = false
+    page = APIPage(index: 1, size: page.size)
+  }
+  
+  func getFlickrItems(
+    params: FlickrSearchRequestParam,
+    onSuccess: @escaping VoidResult,
+    onError: @escaping ErrorResult
+  ) {
+    guard !hasFetchedAllFlickrImages else { return }
     
     service.getImageSearch(
       params: params,
@@ -62,7 +85,7 @@ extension HomeViewModel {
           self.flickrImageItemViewModels.removeAll()
           self.flickrItems.removeAll()
         }
-        self.page = APIPage(index: self.page.index + 1, size: self.page.size)
+        self.page = APIPage(index: flickrPhotos.page + 1, size: flickrPhotos.total)
         if flickrPhotos.photo.isEmpty {
           self.hasFetchedAllFlickrImages = true
         } else {
@@ -77,20 +100,6 @@ extension HomeViewModel {
         }
         onSuccess()
       },
-      onError: onError
-    )
-  }
-  
-  func refreshFlickrItems(
-    query: String?,
-    onSuccess: @escaping VoidResult,
-    onError: @escaping ErrorResult
-  ) {
-    hasFetchedAllFlickrImages = false
-    page = APIPage(index: 1, size: page.size)
-    getFlickrItems(
-      query: query,
-      onSuccess: onSuccess,
       onError: onError
     )
   }

@@ -102,20 +102,24 @@ private extension HomeController {
 
 private extension HomeController {
   func refreshImageFlickImageSearch() {
-    progressPresenter.presentIndefiniteProgress(from: self)
-    viewModel.refreshFlickrItems(
-      query: searchBar.text,
-      onSuccess: handleFetchResult(),
-      onError: handleError()
-    )
+    viewModel.resetToFirstPage()
+    getFlickrImages(query: searchBar.text)
   }
   
-  func getMoreFlickrImages() {
-    viewModel?.getFlickrItems(
-      query: searchBar.text,
-      onSuccess: handleFetchResult(),
-      onError: handleError()
-    )
+  func getFlickrImages(query: String? = nil) {
+    progressPresenter.presentIndefiniteProgress(from: self)
+    if let query = query, !query.isEmpty {
+      viewModel?.searchFlickrImages(
+        with: query,
+        onSuccess: handleFetchResult(),
+        onError: handleError()
+      )
+    } else {
+      viewModel.fetchRecentFlickrImages(
+        onSuccess: handleFetchResult(),
+        onError: handleError()
+      )
+    }
   }
 }
 
@@ -125,13 +129,8 @@ private extension HomeController {
   func handleSearchResult() -> SingleResult<String> {
     return { [weak self] queryText in
       guard let self = self else { return }
-      
-      self.progressPresenter.presentIndefiniteProgress(from: self)
-      self.viewModel.refreshFlickrItems(
-        query: queryText,
-        onSuccess: self.handleFetchResult(),
-        onError: self.handleError()
-      )
+      self.viewModel.resetToFirstPage()
+      self.getFlickrImages(query: queryText)
     }
   }
   
@@ -146,7 +145,7 @@ private extension HomeController {
     return { [weak self] in
       guard let self = self else { return }
       self.collectionViewVM.isLoading = true
-      self.getMoreFlickrImages()
+      self.getFlickrImages(query: self.searchBar.text)
     }
   }
   
@@ -196,7 +195,6 @@ extension HomeController {
   ) -> Int {
     return viewModel.flickrImageItemViewModels.isEmpty ? 1 : viewModel.flickrImageItemViewModels.count
   }
-  
   
   func collectionView(
     _ collectionView: UICollectionView,
