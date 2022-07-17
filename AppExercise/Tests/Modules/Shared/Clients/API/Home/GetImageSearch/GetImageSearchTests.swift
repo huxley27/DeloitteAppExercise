@@ -1,43 +1,39 @@
-// 
-//  PostUploadMediaTests.swift
+//
+//  GetImageSearchTests.swift
 //  AppExercise
 //
 //  Created by HuxleyAlcain ( huxley.alcain@gmail.com )
-//  Copyright © 2021 Huxley. All rights reserved.
-//  
+//  Copyright © 2020 Huxley. All rights reserved.
+//
 
 import Foundation
 
-import Quick
 import Nimble
+import Quick
 
 @testable import AppExercise
 
-class PostUploadMediaTests: QuickSpec, EndpointResponseSpec {
+class GetImageSearchTests: QuickSpec, EndpointResponseSpec {
   override func spec() {
-    describe("PostUploadMedia") {
+    describe("GetImageSearch") {
       var apiResponse: APIResponse!
-      var data: Photo!
-      
-      afterEach {
-        apiResponse = nil
-        data = nil
-      }
-      
+
       context("when decoding status 200 response") {
         beforeEach {
           apiResponse = self.decodeResponseValue(statusCode: .ok)
         }
-        
+
         it("should have non-nil decoded response") {
           expect(apiResponse).toNot(beNil())
         }
-        
-        it("should have 200 status code") {
-          data = apiResponse.decodedValue()
-          
-          expect(data).toNot(beNil())
+
+        it("should have ok status") {
+          expect(apiResponse.stat).to(equal("ok"))
         }
+      }
+
+      afterEach {
+        apiResponse = nil
       }
     }
   }

@@ -1,0 +1,22 @@
+{
+    "photos": {
+        "page": 1,
+        "pages": 176108,
+        "perpage": 1,
+        "total": 176108,
+        "photo": [
+            {
+                "id": "52222944434",
+                "owner": "113602725@N05",
+                "secret": "bd5f365940",
+                "server": "65535",
+                "farm": 66,
+                "title": "Ferrari 812GTS",
+                "ispublic": 1,
+                "isfriend": 0,
+                "isfamily": 0
+            }
+        ]
+    },
+    "stat": "ok"
+}

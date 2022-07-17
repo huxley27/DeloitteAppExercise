@@ -135,12 +135,12 @@ PODS:
   - Motion (3.1.3):
     - Motion/Core (= 3.1.3)
   - Motion/Core (3.1.3)
-  - Nimble (9.2.0)
+  - Nimble (10.0.0)
   - "NSObject+Rx (5.1.0)":
     - RxSwift (~> 5.1)
   - Pageboy (3.6.2)
   - PureLayout (3.1.8)
-  - Quick (4.0.0)
+  - Quick (5.0.1)
   - R.swift (5.4.0):
     - R.swift.Library (~> 5.3.0)
   - R.swift.Library (5.3.0)
@@ -159,6 +159,7 @@ PODS:
     - RxCocoa (~> 5.0)
     - RxSwiftExt/Core
   - SkeletonView (1.8.8)
+  - SnapshotTesting (1.9.0)
   - SVProgressHUD (2.2.5)
   - SwiftLint (0.34.0)
 
@@ -178,15 +179,16 @@ DEPENDENCIES:
   - MaterialComponents/Snackbar (~> 104.0.1)
   - MaterialComponents/TextFields (~> 104.0.1)
   - "MaterialComponents/TextFields+Theming (~> 104.0.1)"
-  - Nimble (~> 9.2.0)
+  - Nimble (~> 10.0.0)
   - "NSObject+Rx (= 5.1.0)"
   - Pageboy (~> 3.6.2)
   - PureLayout (~> 3.1.8)
-  - Quick (~> 4.0.0)
+  - Quick (~> 5.0.1)
   - R.swift (~> 5.4.0)
   - RxSwift (= 5.1.0)
   - RxSwiftExt (= 5.1.0)
   - SkeletonView (~> 1.8.7)
+  - SnapshotTesting (~> 1.9.0)
   - SVProgressHUD (~> 2.2.5)
   - SwiftLint (~> 0.34.0)
 
@@ -218,6 +220,7 @@ SPEC REPOS:
     - RxSwift
     - RxSwiftExt
     - SkeletonView
+    - SnapshotTesting
     - SVProgressHUD
     - SwiftLint
 
@@ -236,11 +239,11 @@ SPEC CHECKSUMS:
   MDFInternationalization: d697c55307816222a55685c4ccb1044ffb030c12
   MDFTextAccessibility: f4bb4cc2194286651b59a215fdeaa0e05dc90ba5
   Motion: cf1e060e489f6661126374d5c60dbd2ed991605c
-  Nimble: 4f4a345c80b503b3ea13606a4f98405974ee4d0b
+  Nimble: 5316ef81a170ce87baf72dd961f22f89a602ff84
   "NSObject+Rx": fa6bbcc1ab1faa06b01466bc09b1e0692bbc5946
   Pageboy: cf121b9dd48c63f3f281b2a9ec93d02e0f23879b
   PureLayout: a4afb3d79dd958564ce33d22c89f407280d8e6a8
-  Quick: 6473349e43b9271a8d43839d9ba1c442ed1b7ac4
+  Quick: 749aa754fd1e7d984f2000fe051e18a3a9809179
   R.swift: c533450b0f7dc494e0993f5f1a1db925d84c3006
   R.swift.Library: 0fc583cb55a99e28901299cc451614cad1161962
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
@@ -248,9 +251,10 @@ SPEC CHECKSUMS:
   RxSwift: ad5874f24bb0dbffd1e9bb8443604e3578796c7a
   RxSwiftExt: 41251b448c8883765251af9bfcea651838094a06
   SkeletonView: e37c282c1b228547b83daf47605f79c3aeb1df9a
+  SnapshotTesting: 6141c48b6aa76ead61431ca665c14ab9a066c53b
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftLint: 79d48a17c6565dc286c37efb8322c7b450f95c67
 
-PODFILE CHECKSUM: c70d84cf51091278786467f3a77836947b0cea41
+PODFILE CHECKSUM: 5049a8d41bf120b8975cdba51709663a3c918abd
 
 COCOAPODS: 1.11.3

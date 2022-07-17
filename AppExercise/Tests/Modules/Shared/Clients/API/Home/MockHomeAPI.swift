@@ -1,5 +1,5 @@
 //
-//  MockDevicesAPI.swift
+//  MockHomeAPI.swift
 //  AppExercise
 //
 //  Created by HuxleyAlcain ( huxley.alcain@gmail.com )
@@ -10,28 +10,28 @@ import Foundation
 
 @testable import AppExercise
 
-class MockDevicesAPI: DevicesAPI {
+class MockHomeAPI: HomeAPI {
   var errorToReturn: Error?
 
-  private(set) var postDevicesCallCount = 0
+  private(set) var getImageSearchCallCount = 0
 
   func reset() {
     errorToReturn = nil
   }
 }
 
-extension MockDevicesAPI {
-  func postDevices(
-    token: String,
-    onSuccess: @escaping VoidResult,
+extension MockHomeAPI {
+  func getImageSearch(
+    params: FlickrSearchRequestParam,
+    onSuccess: @escaping SingleResult<FlickrPhotos>,
     onError: @escaping ErrorResult
   ) -> RequestProtocol {
-    postDevicesCallCount += 1
+    getImageSearchCallCount += 1
 
     if let e = errorToReturn {
       onError(e)
     } else {
-      onSuccess()
+      onSuccess(.init())
     }
 
     return DummyRequest()

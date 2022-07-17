@@ -20,6 +20,7 @@ def app_pods
   pod 'Pageboy', '~> 3.6.2'
   pod 'SkeletonView', '~> 1.8.7'
   pod 'ImageViewer.swift', '~> 3.0'
+  pod 'ImageViewer.swift/Fetcher', '~> 3.0'
   pod 'Hero', '~> 1.6.1'
   pod 'ImageSlideshow', '~> 1.9.2'
 
@@ -38,9 +39,9 @@ def app_pods
 end
 
 def testing_pods
-  pod 'Quick', '~> 4.0.0'
-  pod 'Nimble', '~> 9.2.0'
-
+  pod 'Quick', '~> 5.0.1'
+  pod 'Nimble', '~> 10.0.0'
+  pod 'SnapshotTesting', '~> 1.9.0'
 end
 
 target 'AppExercise' do
@@ -50,11 +51,7 @@ target 'AppExercise' do
     inherit! :search_paths
     testing_pods
   end
-  
-  target 'UITests' do
-    inherit! :search_paths
-    testing_pods
-  end
+
 end
 
 post_install do |installer|
