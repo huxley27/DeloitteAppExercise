@@ -2,8 +2,8 @@
 //  CollectionViewModelProtocol.swift
 //  AirBabble
 //
-//  Created by Rey Cerio on 2021-11-08.
-//  Copyright © 2021 Appetiser Pty Ltd. All rights reserved.
+//  Created by HUXLEY ALCAIN on 7/14/22.
+//  Copyright © 2022 Huxley. All rights reserved.
 //
 
 import Foundation

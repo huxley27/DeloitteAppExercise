@@ -91,7 +91,7 @@ private extension HomeController {
   
   func bindSearchBar() {
     searchBar.rx.text.orEmpty
-      .debounce(.seconds(1), scheduler: MainScheduler.instance)
+      .debounce(.milliseconds(500), scheduler: MainScheduler.instance)
       .distinctUntilChanged()
       .subscribe(onNext: handleSearchResult())
       .disposed(by: rx.disposeBag)

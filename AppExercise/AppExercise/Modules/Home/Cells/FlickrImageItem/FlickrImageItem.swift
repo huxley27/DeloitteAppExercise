@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import ImageViewer_swift
+import SDWebImage
 
 class FlickrImageItem: UICollectionViewCell {
   var viewModel: FlickrImageItemViewModelProtocol! {
@@ -34,13 +36,18 @@ private extension FlickrImageItem {
   }
   
   func setupFromViewModel() {
+    guard let url = viewModel.flickItemImageUrl else { return }
+    
     container.backgroundColor = .white
     imageView.setImageWithURL(
-      viewModel.flickItemImageUrl,
+      url,
       placeholder: viewModel.flickItemPlaceholderImage,
       onSuccess: onImageDownloadSuccess(),
       onError: onImageDownloadError()
     )
+
+    // TODO: Extract logic outside of this cell
+    imageView.setupImageViewer(url: url)
   }
 }
 

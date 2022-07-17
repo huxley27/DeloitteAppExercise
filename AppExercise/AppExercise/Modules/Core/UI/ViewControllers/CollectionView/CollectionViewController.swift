@@ -2,8 +2,8 @@
 //  CollectionViewController.swift
 //  AirBabble
 //
-//  Created by Rey Cerio on 2021-10-30.
-//  Copyright © 2021 Appetiser Pty Ltd. All rights reserved.
+//  Created by HUXLEY ALCAIN on 7/14/22.
+//  Copyright © 2022 Huxley. All rights reserved.
 //
 
 import UIKit

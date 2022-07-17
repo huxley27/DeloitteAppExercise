@@ -24,6 +24,7 @@ def app_pods
   pod 'Hero', '~> 1.6.1'
   pod 'ImageSlideshow', '~> 1.9.2'
   pod 'Blueprints', '0.13.1'
+  pod 'SDWebImage', '~> 5.0'
 
   # ReactiveX
   pod 'RxSwift', '5.1.0'

@@ -1920,6 +1920,7 @@
 				D08505D5287F585500E58ACF /* Clients */,
 				D08505C6287F56A000E58ACF /* Cells */,
 				E4FB54A52649CED100041B4F /* Home.storyboard */,
+				D03FAA8E2883533300BDAE43 /* HomeCoordinator.swift */,
 				E4FB54A62649CED100041B4F /* HomeController.swift */,
 				E4FB54A72649CED100041B4F /* HomeViewModel.swift */,
 				E4FB54A82649CED100041B4F /* HomeViewModelProtocol.swift */,
@@ -2156,6 +2157,7 @@
 				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwiftExt/RxSwiftExt.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SkeletonView/SkeletonView.framework",
 			);
@@ -2184,6 +2186,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwiftExt.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkeletonView.framework",
 			);
@@ -2403,6 +2406,7 @@
 				A1F5008624B2BD0E008B8CA9 /* ShimmerPresenterProtocol.swift in Sources */,
 				E4F3DEA42449644300EAD0FF /* Attributeable.swift in Sources */,
 				A12F4C952564DB500083AF5E /* ImagePickerPresenterProtocol.swift in Sources */,
+				D03FAA8F2883533300BDAE43 /* HomeCoordinator.swift in Sources */,
 				D08505CF287F570700E58ACF /* FlickrImageItemViewModel.swift in Sources */,
 				A9FFC36223FCEB8A000311DC /* APIClient.swift in Sources */,
 				A12F4C9F2564E7810083AF5E /* UICollectionView+Rx.swift in Sources */,
