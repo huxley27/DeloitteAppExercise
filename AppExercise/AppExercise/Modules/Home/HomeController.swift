@@ -13,8 +13,14 @@ import RxCocoa
 import RxSwift
 import Blueprints
 
+public protocol HomeControllerDelegate: AnyObject {
+  // Insert Here Home Controller Delegate Methods
+  // if you want coordinator to do something about it
+}
+
 class HomeController: CollectionViewController {
   var viewModel: HomeViewModelProtocol!
+  var coordinator: HomeControllerDelegate?
   
   @IBOutlet weak private(set) var searchBar: UISearchBar!
 }

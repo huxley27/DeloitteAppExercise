@@ -177,8 +177,11 @@
 		D01C532028847CB600B5E225 /* NavigableCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01C531728847CB600B5E225 /* NavigableCoordinator.swift */; };
 		D01C532128847CB600B5E225 /* RootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01C531828847CB600B5E225 /* RootCoordinator.swift */; };
 		D01C532328847CB600B5E225 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01C531A28847CB600B5E225 /* Coordinator.swift */; };
+
+
 		D01C532728848E1300B5E225 /* DummyFlickrPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01C532628848E1300B5E225 /* DummyFlickrPhoto.swift */; };
 		D01C532928848F8300B5E225 /* FlickrPhotoTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01C532828848F8300B5E225 /* FlickrPhotoTest.swift */; };
+
 		D032AA4828807E0B00B96A15 /* CollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D032AA4528807E0B00B96A15 /* CollectionViewModel.swift */; };
 		D032AA4928807E0B00B96A15 /* CollectionViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D032AA4628807E0B00B96A15 /* CollectionViewModelProtocol.swift */; };
 		D032AA4A28807E0B00B96A15 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D032AA4728807E0B00B96A15 /* CollectionViewController.swift */; };
@@ -421,6 +424,7 @@
 		D01C531728847CB600B5E225 /* NavigableCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigableCoordinator.swift; sourceTree = "<group>"; };
 		D01C531828847CB600B5E225 /* RootCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootCoordinator.swift; sourceTree = "<group>"; };
 		D01C531A28847CB600B5E225 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+
 		D01C532628848E1300B5E225 /* DummyFlickrPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyFlickrPhoto.swift; sourceTree = "<group>"; };
 		D01C532828848F8300B5E225 /* FlickrPhotoTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrPhotoTest.swift; sourceTree = "<group>"; };
 
@@ -869,6 +873,7 @@
 		A160628F25C13F4900E784DB /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				D01C531028847CB500B5E225 /* Coordination */,
 				A160629025C13F5F00E784DB /* Models */,
 				A16062BB25C140EF00E784DB /* Services */,
 				A160629625C13FD100E784DB /* UI */,
@@ -1711,6 +1716,7 @@
 			path = Coordination;
 			sourceTree = "<group>";
 		};
+
 		D01C532528848DD400B5E225 /* Flickr */ = {
 			isa = PBXGroup;
 			children = (
@@ -2281,6 +2287,7 @@
 				A1379EC6254152A00057F52D /* PostNotificationBindableProtocol.swift in Sources */,
 				A9E381BE22B63345000A16F1 /* AnyDecodable.swift in Sources */,
 				9EFD8A2A2518F6910069515D /* UIView+Responder.swift in Sources */,
+				D01C531D28847CB600B5E225 /* NavigatingCoordinator.swift in Sources */,
 				A171F22C2457D9EE00858B6B /* UINavigationBar+Transparency.swift in Sources */,
 				D032AA4828807E0B00B96A15 /* CollectionViewModel.swift in Sources */,
 				A13801B525394EB3008C3DE7 /* ProgressPresenterProtocol.swift in Sources */,
@@ -2299,6 +2306,7 @@
 				9E2F4C14244D429A001B9113 /* Array+Index.swift in Sources */,
 				A1058BC22578AC4C00BABF7C /* UILabel+Rx.swift in Sources */,
 				9EFD8A532519A0010069515D /* UILabel+Text.swift in Sources */,
+				D01C532128847CB600B5E225 /* RootCoordinator.swift in Sources */,
 				A999CB7E240B980900F95108 /* Defaultable.swift in Sources */,
 				A9FFC35E23FCEB8A000311DC /* BaseModelTrackingService.swift in Sources */,
 				A1A01D2D2652324200D01262 /* VersionInfoViewModelProtocol.swift in Sources */,
@@ -2316,6 +2324,7 @@
 				A1FB05E72462B2FA00870BB1 /* Photo.swift in Sources */,
 				A94A371E2331E55D0040412F /* UIViewController+Dismiss.swift in Sources */,
 				A113CAAE24B19161000038CB /* UITableViewCell+Static.swift in Sources */,
+				D01C532328847CB600B5E225 /* Coordinator.swift in Sources */,
 				A17CC7B524C06CF500D89567 /* DirtyFormCheckerProtocol.swift in Sources */,
 				E4F3DEA12449630000EAD0FF /* Styleable.swift in Sources */,
 				A98334C422804AFC006B1245 /* NavigationController.swift in Sources */,
@@ -2372,6 +2381,7 @@
 				A10C24D124AD7C8D000493EA /* GenericPickerViewModel.swift in Sources */,
 				A999CB7C240B980900F95108 /* Identifiable.swift in Sources */,
 				A9A973A120563CA2000C137F /* BaseView.swift in Sources */,
+				D01C531B28847CB600B5E225 /* PresentableCoordinator.swift in Sources */,
 				A1AAA4D0249A0B85008E4251 /* SingleFormInputControllerProtocol.swift in Sources */,
 				D08505D4287F57F400E58ACF /* FlickrItem.swift in Sources */,
 				A181FF3C255E227500C6DCC0 /* AppServiceProtocol.swift in Sources */,
@@ -2386,6 +2396,7 @@
 				9EFD8A2E2518F6990069515D /* Locale+Currency.swift in Sources */,
 				E46B37C5263A228A0071DFE6 /* Theme+Component.swift in Sources */,
 				A10E24742473B816006CEBFF /* Notifications.swift in Sources */,
+				D01C532028847CB600B5E225 /* NavigableCoordinator.swift in Sources */,
 				A113CAA524B16E63000038CB /* UIImageView+URL.swift in Sources */,
 				A1DF040D242C7ED500157049 /* APIErrorCode.swift in Sources */,
 				A1E5F5B2243DE26F00F128AA /* UIWindow+RootController.swift in Sources */,
@@ -2414,6 +2425,7 @@
 				9E3E60962474C4F0003D2652 /* PageController.swift in Sources */,
 				A1E5F5A8243DE10900F128AA /* ScrollableController.swift in Sources */,
 				9E3E60A72474C524003D2652 /* Bool+NumericValue.swift in Sources */,
+				D01C531F28847CB600B5E225 /* PresentingCoordinator.swift in Sources */,
 				A1E9355125AEE8640036E053 /* UINavigationController+PopCompletion.swift in Sources */,
 				A141D55624C01066000A699C /* DefaultSnackbarSuccessInfo.swift in Sources */,
 				A19073F3255104B900C21863 /* HeroAnimation.swift in Sources */,

@@ -33,12 +33,11 @@ private extension DashboardController {
   }
 
   func setupHomeTab() {
-    guard let vc = initialController(for: .home) as? HomeController else {
-      preconditionFailure("Expecting viewController of type ViewController")
-    }
-    vc.hidesBottomBarWhenPushed = true
-    vc.viewModel = HomeViewModel()
-    vc.collectionViewVM = CollectionViewModel()
+    let homeCoordinator = HomeCoordinator(service: App.shared.flickr)
+    
+    let nc = UINavigationController(rootViewController: homeCoordinator.viewController)
+    nc.setNavigationBarHidden(true, animated: false)
+    addChild(nc)
   }
 
   func initialController(for tab: Tab) -> UIViewController {
